@@ -1,6 +1,9 @@
+import Footer from "@/components/footer";
+import NavHeader from "@/components/header";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Providers } from "./components/providers";
+
+import { Providers } from "@/app/components/providers";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -28,9 +31,18 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+				className={`${geistSans.variable} ${geistMono.variable} antialiased [perspective::1000px] [transform-style:preserve-3d] h-screen w-full bg-neutral-900  text-white mx-auto `}
+				style={{
+					backgroundImage: `radial-gradient(circle at 0.5px 0.5px,rgba(6,182,212,0.2), 0.5px, transparent 0)`,
+					backgroundSize: "8px 8px",
+					backgroundRepeat: "repeat",
+				}}
 			>
-				<Providers>{children}</Providers>
+				<Providers>
+					<NavHeader />
+					{children}
+					<Footer />
+				</Providers>
 			</body>
 		</html>
 	);
