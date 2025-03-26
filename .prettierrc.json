@@ -11,8 +11,12 @@
   ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true,
-  "plugins": [
+  "printWidth": 120,
+  "plugins": [ 
     "@trivago/prettier-plugin-sort-imports",
-    "prettier-plugin-tailwindcss"
-  ]
+    "prettier-plugin-tailwindcss"],
+  "tailwindStylesheet": "./src/app/globals.css",
+  "tailwindFunctions": ["clsx", "cn", "tw"],
+  "tailwindPreserveWhitespace": true,
+  "tailwindPreserveDuplicates": false
 }

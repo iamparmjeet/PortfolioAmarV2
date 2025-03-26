@@ -12,7 +12,7 @@ function NavHeader() {
 
 	return (
 		<ul
-			className="relative mx-auto flex w-fit rounded-full border-2 border-black bg-white p-1"
+			className="relative mx-auto flex w-fit rounded-lg mt-4 bg-lime-400/5 p-1"
 			onMouseLeave={() =>
 				setPosition((pv) => ({ ...pv, opacity: 0 }))
 			}
@@ -49,7 +49,7 @@ const Tab = ({
 					left: ref.current.offsetLeft,
 				});
 			}}
-			className="relative z-10 block cursor-pointer px-3 py-1.5 text-xs uppercase text-white mix-blend-difference md:px-5 md:py-3 md:text-base"
+			className="relative z-10 block cursor-pointer px-3 py-1.5 text-xs uppercase text-lime-600 font-medium mix-blend-difference md:px-5 md:py-3 md:text-base"
 		>
 			{children}
 		</li>
@@ -60,7 +60,7 @@ const Cursor = ({ position }: { position: any }) => {
 	return (
 		<motion.li
 			animate={position}
-			className="absolute z-0 h-7 rounded-full bg-black md:h-12"
+			className="absolute z-0 h-7 rounded-lg bg-lime-600 md:h-12"
 		/>
 	);
 };
