@@ -40,8 +40,10 @@ export default function RootLayout({
 			>
 				<Providers>
 					<main className="container mx-auto flex flex-col h-screen">
-					<NavHeader />
-					{children}
+						<NavHeader />
+						<main className="flex-grow">
+							{children}
+						</main>
 					<Footer />
 					</main>
 				</Providers>
