@@ -36,3 +36,5 @@ dist
 wrangler.toml
 .dev.vars
 .wrangler
+
+.next
