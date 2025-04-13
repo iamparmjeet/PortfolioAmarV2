@@ -1,13 +1,13 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Play, ArrowRight, Film, Mic, Camera, BookOpen } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { ArrowRight, BookOpen, Camera, Film, Mic, Play } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+
+import { Button } from "@/components/ui/button";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       {/* Header */}
-     
 
       <main className="flex-1">
         {/* Hero Section */}
@@ -24,7 +24,8 @@ export default function Home() {
           <div className="container relative z-10 py-24 md:py-32 lg:py-40">
             <div className="max-w-3xl space-y-5">
               <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">
-                Capturing Stories Through <span className="text-primary">Visual Excellence</span>
+                Capturing Stories Through
+                <span className="text-primary">Visual Excellence</span>
               </h1>
               <p className="text-xl text-muted-foreground">
                 Professional video editing and shooting services for shorts, podcasts, product shoots, and catalogues.
@@ -508,7 +509,11 @@ export default function Home() {
             <span>VisualStory</span>
           </div>
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} VisualStory. All rights reserved.
+            &copy;
+            {" "}
+            {new Date().getFullYear()}
+            {" "}
+            VisualStory. All rights reserved.
           </p>
           <div className="flex gap-4">
             <Link href="#" className="text-sm text-muted-foreground hover:text-foreground">
@@ -521,6 +526,5 @@ export default function Home() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
-
