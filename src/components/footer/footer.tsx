@@ -1,9 +1,9 @@
 import { IconBrandWhatsapp, IconMail, IconMap2 } from "@tabler/icons-react";
 import Link from "next/link";
 
+import Logo from "../logo";
+import SocialsBox from "../socials";
 import FooterCopyright from "./footer-copyright";
-import Logo from "./logo";
-import SocialsBox from "./socials";
 
 export default function Footer() {
   return (
