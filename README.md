@@ -3,8 +3,8 @@
 - [ ] Header & Footer
   - [ ] Header Desktop
   - [ ] Header Mobile
-  - [ ] Footer Desktop
-  - [ ] Footer Mobile
+  - [x] Footer Desktop
+  - [x] Footer Mobile
 - [ ] Home Page
   - [ ] Desktop Version
   - [ ] Mobile Version
