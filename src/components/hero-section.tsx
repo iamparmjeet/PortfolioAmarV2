@@ -1,20 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function HeroSection() {
   return (
     <>
-      <section className="relative h-screen flex items-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-black/70 z-10"></div>
-          <Image
-            src="/images/placeholder.svg"
-            alt="Video Production Background"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
+      <section className="h-screen flex items-center overflow-hidden">
 
         <div className="container mx-auto px-4 relative z-20">
           <div className="max-w-3xl">

@@ -7,7 +7,7 @@ import ServicesSection from "@/components/services-section";
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
-      <main className="min-h-screen bg-black text-white">
+      <main className="min-h-screen">
         <HeroSection />
         <ServicesSection />
         <PortfolioSection />
