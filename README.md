@@ -1,8 +1,8 @@
 ### Building Portfolio Site
 
-- [ ] Header & Footer
-  - [ ] Header Desktop
-  - [ ] Header Mobile
+- [x] Header & Footer
+  - [x] Header Desktop
+  - [x] Header Mobile
   - [x] Footer Desktop
   - [x] Footer Mobile
 - [ ] Home Page
