@@ -3,6 +3,7 @@ import Link from "next/link";
 
 const Socials = [
   {
+    id: 1,
     href: "https://www.instagram.com/amarjeetmishra001/",
     icon: (
       <IconBrandInstagram
@@ -11,6 +12,7 @@ const Socials = [
     ),
   },
   {
+    id: 2,
     href: "#",
     icon: (
       <IconBrandTwitter
@@ -19,6 +21,7 @@ const Socials = [
     ),
   },
   {
+    id: 3,
     href: "#",
     icon: (
       <IconBrandYoutube
@@ -33,7 +36,7 @@ export default function SocialsBox() {
     <div className="flex space-x-4">
       {Socials.map(social => (
         <SocialIcon
-          key={social.href}
+          key={social.id}
           href={social.href}
           icon={social.icon}
         />
@@ -51,7 +54,7 @@ function SocialIcon({ href, icon }: SocialIconType) {
   return (
     <Link
       href={href}
-      className="text-lime-600 transition-colors"
+      className="text-lime-600/90 transition-colors"
     >
       {icon}
     </Link>
