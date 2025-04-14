@@ -38,7 +38,7 @@ function NavHeader() {
 
   return (
     <ul
-      className="relative mx-auto flex w-fit rounded-lg mt-4 bg-lime-400/5 p-1"
+      className="relative flex w-fit rounded-lg mt-4 bg-lime-400/5 p-1"
       onMouseLeave={() => {
         const activeTab = document.querySelector(`a[href="${pathname}"]`);
         if (activeTab) {
