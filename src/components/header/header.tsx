@@ -3,8 +3,8 @@ import { IconMenu, IconX } from "@tabler/icons-react";
 import Link from "next/link";
 import { useState } from "react";
 
-import Logo from "./logo";
-import { Button } from "./ui/button";
+import Logo from "@/components/header/logo";
+import { Button } from "@/components/ui/button";
 
 const navigation = [
   { name: "Home", href: "/" },

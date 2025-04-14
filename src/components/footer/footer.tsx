@@ -1,7 +1,7 @@
 import { IconBrandWhatsapp, IconMail, IconMap2 } from "@tabler/icons-react";
 import Link from "next/link";
 
-import Logo from "../logo";
+import Logo from "../header/logo";
 import SocialsBox from "../socials";
 import FooterCopyright from "./footer-copyright";
 
