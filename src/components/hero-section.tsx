@@ -1,9 +1,12 @@
 import Link from "next/link";
 
+import { VideoPlayer } from "./video-player";
+
 export default function HeroSection() {
   return (
     <>
       <section className="h-screen flex items-center overflow-hidden">
+        <VideoPlayer src="https://media.amarjeetmishra.com/aggarwal-tile/1/master.m3u8" />
 
         <div className="container mx-auto px-4 relative z-20">
           <div className="max-w-3xl">

@@ -14,6 +14,7 @@ node_modules
 # env
 .env
 .env.production
+.env*
 
 # logs
 logs/
@@ -37,3 +38,12 @@ wrangler.toml
 .wrangler
 
 .next
+
+open-next*
+.open-next
+# next-video
+videos/*
+!videos/*.json
+!videos/*.js
+!videos/*.ts
+public/_next-video
