@@ -3,9 +3,12 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 
 import Footer from "@/components/footer/footer";
-import NavHeader from "@/components/header/header";
 
 import "./globals.css";
+
+import NavHeader from "@/components/header/header";
+import Logo from "@/components/header/logo";
+import { LogoImg } from "@/lib/data";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -21,7 +24,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Amar Editz",
   description: "Video Editz with love",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  icons: [{ rel: "icon", url: LogoImg }],
 };
 
 export default function RootLayout({
@@ -32,18 +35,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased [perspective::1000px] [transform-style:preserve-3d] min-h-screen w-full bg-black  text-white mx-auto `}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased [perspective::1000px] [transform-style:preserve-3d] flex flex-col `}
         style={{
-          backgroundImage: `radial-gradient(circle at 0.5px 0.5px,rgba(6,182,212,0.2), 0.5px, transparent 0)`,
+          backgroundImage: `radial-gradient(circle at 0.2px 0.2px,rgba(6,182,212,0.1), 0.5px, transparent 0)`,
           backgroundSize: "8px 8px",
           backgroundRepeat: "repeat",
         }}
       >
-        <main className="mx-auto flex flex-col h-screen">
-          <main className="flex-grow">
-            <NavHeader />
-            {children}
-          </main>
+        <NavHeader />
+        <main className="min-h-screen flex-grow">
+          {children}
           <Footer />
         </main>
       </body>
