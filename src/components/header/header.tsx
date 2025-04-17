@@ -6,6 +6,7 @@ import { useState } from "react";
 
 import Logo from "@/components/header/logo";
 import { Button } from "@/components/ui/button";
+import { useScroll } from "@/lib/hooks";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -17,79 +18,89 @@ const navigation = [
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  const scrolled = useScroll();
 
   return (
     <>
       <header
-        className="container w-full relative flex items-center justify-between transition-all py-4 px-2 md:my-4 mb-4 rounded-md bg-lime-400/5 duration-300"
+        className={`sticky z-50 px-4 md:px-0 py-2 md:py-4 top-0 ${scrolled
+          ? "bg-black/5 border-b border-gray-800/50 backdrop-blur-md"
+          : "bg-transparent"}`}
       >
-        <Logo />
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-2 text-lime-500 transition-colors">
-          {navigation.map(item => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className={`"hover:bg-lime-600 hover:text-lime-950 px-4 py-2 rounded-md transition-colors" 
-            ${pathname === item.href
-              ? "bg-lime-600 text-lime-950 "
-              : "hover:bg-lime-600"
-            } `}
-            >
-              {item.name}
-            </Link>
-          ))}
+        <div className="container hidden md:flex items-center justify-between mx-auto">
+          <Logo />
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-2 text-gray-300 text-lg transition-colors">
+            {navigation.map(item => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`px-4 py-2 rounded-md transition-colors"
+              ${pathname === item.href
+                ? "bg-linear-to-r from-orange-600 to-amber-600 text-stone-900"
+                : "hover:bg-linear-to-r from-orange-600 to-amber-600 hover:text-stone-900"
+              } `}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </nav>
           <LetsTalkButton />
-        </nav>
+        </div>
         {/* Mobile Menu Button */}
-        <Button
-          type="button"
-          variant="ghost"
-          className="md:hidden bg-lime-600/80 text-lime-400 cursor-pointer"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {
-            mobileMenuOpen
-              ? <IconX className="h-6 w-6" />
-              : <IconMenu className="h-6 w-6" />
-          }
-        </Button>
-      </header>
-      {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <header className="realtive z-50 w-full h-full">
-          <div className="absolute left-0 right-0 bg-lime-950 rounded-md w-full p-4 md:hidden ">
-            <ul className="flex items-start flex-col space-y-2 mb-6">
-              {navigation.map(item => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={`"hover:bg-lime-600 hover:text-lime-950 w-full px-4 py-1.5 rounded-md transition-colors" 
+        <div className="flex md:hidden items-center justify-between">
+          <Logo />
+          <Button
+            type="button"
+            variant="orange"
+            className="md:hidden rounded-md cursor-pointer"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {
+              mobileMenuOpen
+                ? <IconX className="h-6 w-6" />
+                : <IconMenu className="h-6 w-6" />
+            }
+          </Button>
+        </div>
+
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <div className="md:hidden realtive z-20 w-full h-screen">
+            <div className="absolutes left-0 right-0 bg-orange-400/15 scroll-auto  backdrop-blur-xl rounded-md w-full p-4 md:hidden ">
+              <ul className="flex items-start flex-col space-y-2 mb-6">
+                {navigation.map(item => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className={`w-full px-4 py-1.5 rounded-md transition-colors" 
                   ${pathname === item.href
-                  ? "bg-lime-600 text-lime-950 "
-                  : "hover:bg-lime-600"
-                } `}
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </ul>
-            <LetsTalkButton />
+                    ? "bg-linear-to-r from-orange-600 to-amber-600"
+                    : "hover:bg-linear-to-r from-orange-600 to-amber-600"
+                  } `}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </ul>
+              <LetsTalkButton />
+            </div>
           </div>
-        </header>
-      )}
+        )}
+      </header>
     </>
   );
 }
 
 function LetsTalkButton() {
   return (
-    <Link
-      href="#contact"
-      className="px-4 py-2 bg-lime-600 text-lime-950 hover:bg-lime-600/80 hover:text-lime-400 font-medium rounded-md transition-colors"
-    >
-      Let's Talk
-    </Link>
+    <Button asChild className="hidden md:block" variant="orange" size="lg">
+      <Link
+        href="#contact"
+      >
+        Let's Talk
+      </Link>
+    </Button>
   );
 }
