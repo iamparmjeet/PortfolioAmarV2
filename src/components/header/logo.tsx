@@ -6,7 +6,6 @@ import { LogoImg } from "@/lib/data";
 export default function Logo() {
   return (
     <Link href="/" className="flex gap-2 items-center text-white text-2xl md:text-3xl font-medium">
-      {/* <IconMovie className="s-6" /> */}
       <Image
         src={LogoImg}
         width={60}
