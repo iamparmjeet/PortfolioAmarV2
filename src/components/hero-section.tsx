@@ -1,36 +1,31 @@
 import Link from "next/link";
 
+import { Button } from "./ui/button";
+
 export default function HeroSection() {
   return (
     <>
-      <section className="h-screen flex items-center overflow-hidden bg-lime-400/5 ">
-        <div className="container mx-auto px-4 relative z-20">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-7xl font-bold mb-4">
-              <span className="text-white">Visual</span>
-              {" "}
-              <span className="text-gold-400">Storyteller</span>
-            </h1>
-            <h2 className="text-3xl md:text-5xl font-light text-gold-300 mb-6">Video Editor & Content Creator</h2>
-            <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl">
-              Transforming ideas into compelling visual narratives for property dealers, beauty professionals, and
-              businesses across industries.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="#portfolio"
-                className="px-6 py-3 bg-gold-500 hover:bg-gold-600 text-black font-medium rounded-md transition-colors"
-              >
-                View Portfolio
-              </Link>
-              <Link
-                href="#contact"
-                className="px-6 py-3 border border-gold-400 text-gold-400 hover:bg-gold-400/10 font-medium rounded-md transition-colors"
-              >
-                Let's Talk
-              </Link>
-            </div>
-          </div>
+      <section className="contianer h-screen rounded-3xl flex overflow-hidden bg-lime-400/5 p-4 ">
+        <div className="text-center mx-auto px-4 relative z-20">
+          <h1 className="text-5xl md:text-8xl font-extrabold mb-4 bg-gradient-to-r from-lime-400 to-teal-700 bg-clip-text text-transparent">
+            <span>Visual</span>
+            {" "}
+            <span>Storyteller</span>
+          </h1>
+          <h2 className="text-3xl md:text-5xl text-center font-mediumv text-gold-300 mb-6">Video Editor & Content Creator</h2>
+          <p className="text-lg mx-auto md:text-xl text-lime-600 mb-8 max-w-2xl">
+            Transforming ideas into compelling visual narratives for property dealers, beauty professionals, and
+            businesses across industries.
+          </p>
+
+          <Button asChild>
+            <Link
+              href="#contact"
+              className="px-8 py-6  border text-2xl font-medium rounded-md transition-colors"
+            >
+              Let's Talk
+            </Link>
+          </Button>
         </div>
       </section>
     </>

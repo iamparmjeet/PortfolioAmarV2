@@ -8,7 +8,8 @@
     "moduleResolution": "bundler",
     "paths": {
       "@/*": ["./src/*"],
-      "@/lib": ["./src/lib/*"]
+      "@/lib": ["./src/lib/*"],
+      "@/media": ["./public"]
     },
     "resolveJsonModule": true,
     "allowJs": true,

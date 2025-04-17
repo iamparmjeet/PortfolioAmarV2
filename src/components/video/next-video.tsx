@@ -12,7 +12,7 @@ export default function NextVideo() {
         src={video1}
         theme={Instaplay}
         style={{
-          width: "300px",
+          width: "400px",
         }}
       >
         <Image
