@@ -7,7 +7,8 @@ import FooterCopyright from "./footer-copyright";
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className="w-[calc(100%-32px)] md:w-[calc(100%-80px)] relative bg-black p-6 md:p-12 rounded-3xl  max-w-[1600px] xl:mx-auto m-4 md:m-10 ">
+      <Logo />
       <FooterUpper />
       <FooterCopyright />
     </footer>
@@ -16,24 +17,19 @@ export default function Footer() {
 
 function FooterUpper() {
   return (
-    <section className="md:rounded-md bg-lime-400/5 text-lime-500 mb-4 container mx-auto px-4 py-12">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <Brand />
+    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:rounded-md my-0 md:my-8 container mx-auto px-4 py-12">
+        <Social />
         <QuickLinks />
         <Services />
         <Contact />
-      </div>
     </section>
   );
 }
 
-function Brand() {
+function Social() {
   return (
     <div>
-      <Logo />
-      <p className="text-lime-600/90 my-4">
-        Professional video editing, shooting, and concept planning services for various industries.
-      </p>
+      <Heading title="Stay Connected" />
       <SocialsBox />
     </div>
   );
@@ -61,8 +57,8 @@ const QuickLinksItems = [
 function QuickLinks() {
   return (
     <div>
-      <h3 className="text-lg font-medium  mb-4">Quick Links</h3>
-      <ul className="space-y-2">
+      <Heading title="Quick Links" />
+      <ul className="space-y-4">
         {QuickLinksItems.map(item => (
           <LinkBox
             key={item.label}
@@ -83,7 +79,7 @@ type LinkBoxProps = {
 function LinkBox({ label, href }: LinkBoxProps) {
   return (
     <li>
-      <Link href={href} className="text-lime-600/90 hover:text-lime-500 transition-colors">
+      <Link href={href} className="text-neutral-400 hover:text-neutral-300 transition-colors">
         {label}
       </Link>
     </li>
@@ -121,8 +117,8 @@ const ServicesItems = [
 function Services() {
   return (
     <div>
-      <h3 className="text-lg font-medium mb-4">Services</h3>
-      <ul className="space-y-2">
+      <Heading title="Services" />
+      <ul className="space-y-4">
         {ServicesItems.map(item => (
           <LinkBox
             key={item.label}
@@ -166,7 +162,7 @@ function ContactItemListBox({ label, href, icon }: ContactItemProps) {
   return (
     <a
       href={href}
-      className="flex gap-2 items-center text-lime-600/90 hover:text-lime-500 transition-colors"
+      className="flex gap-2 items-center text-neutral-400 hover:text-neutral-300 transition-colors"
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -179,7 +175,7 @@ function ContactItemListBox({ label, href, icon }: ContactItemProps) {
 function Contact() {
   return (
     <div>
-      <h3 className="text-lg font-medium mb-4">Contact</h3>
+      <Heading title="Contact" />
       <ul className="space-y-4">
         {ContactItems.map(item => (
           <ContactItemListBox
@@ -191,5 +187,14 @@ function Contact() {
         ))}
       </ul>
     </div>
+  );
+}
+
+function Heading({ title }: { title: string }) {
+  return (
+    <h3 className="text-lg text-neutral-200 font-medium  mb-7">
+      {title}
+      {" "}
+    </h3>
   );
 }

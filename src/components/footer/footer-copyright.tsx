@@ -5,7 +5,7 @@ const year = d.getFullYear();
 
 export default function FooterCopyright() {
   return (
-    <section className=" text-lime-600/90 py-8 px-2 mx-auto bg-lime-400/5 rounded-lg text-center mb-4">
+    <section className="text-neutral-400 pt-6 md:pt-12 mx-auto text-start border-t border-white/10 ">
       <p>
         ©
         {" "}
@@ -17,7 +17,7 @@ export default function FooterCopyright() {
           href="https://parmjeetmishra.com"
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:text-lime-500"
+          className="hover:text-orange-500"
         >
           Parm
         </a>
