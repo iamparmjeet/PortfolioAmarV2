@@ -6,14 +6,20 @@ import ServicesSection from "@/components/services-section";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col">
-      <main className="min-h-screen">
-        <HeroSection />
-        <ServicesSection />
-        <PortfolioSection />
-        <ClientSection />
-        <ContactSection />
-      </main>
-    </div>
+    <>
+      <HeroSection />
+      <div
+        className={`absolute w-full h-[min(250vh,1800px)] top-0 bg-cover bg-top pointer-events-none -z-10 bg-[url("/images/bg1.jpg")] `}
+      >
+      </div>
+      <ServicesSection />
+      <PortfolioSection />
+      <ClientSection />
+      <ContactSection />
+      <div
+        className={`absolute w-full h-[min(250vh,1800px)] bottom-0 bg-cover bg-top pointer-events-none -z-10 bg-[url("/images/bg-gradient-min.jpg")] `}
+      >
+      </div>
+    </>
   );
 }
