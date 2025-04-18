@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 export default function HeroSection() {
   return (
     <>
-      <section className="contianer h-screen rounded-3xl flex overflow-hidden bg-lime-400/5 p-4 ">
+      <section className="contianer h-screen flex overflow-hidden p-4 ">
         <div className="text-center mx-auto px-4 relative z-20">
           <h1 className="text-5xl md:text-8xl font-extrabold mb-4 bg-gradient-to-r from-lime-400 to-teal-700 bg-clip-text text-transparent">
             <span>Visual</span>
