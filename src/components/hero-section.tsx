@@ -30,7 +30,7 @@ export default function HeroSection() {
           Transforming ideas into compelling visual narratives for property dealers, beauty professionals, and
           businesses across industries.
         </p>
-        <LetsTalkButton />
+        <LetsTalkButton href="#contact" text={"Lets Talk"} />
       </div>
 
     </section>

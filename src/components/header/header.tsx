@@ -46,7 +46,7 @@ export default function Header() {
               </Link>
             ))}
           </nav>
-          <LetsTalkButton />
+          <LetsTalkButton href="#contact" text={"Lets Talk"} />
         </div>
         {/* Mobile Menu Button */}
         <div className="flex md:hidden items-center justify-between">
@@ -85,7 +85,8 @@ export default function Header() {
                   </Link>
                 ))}
               </ul>
-              <LetsTalkButton />
+            <LetsTalkButton href="#contact" text={"Lets Talk"} />
+              
             </div>
           </div>
         )}
