@@ -7,8 +7,6 @@ import Footer from "@/components/footer/footer";
 import "./globals.css";
 
 import NavHeader from "@/components/header/header";
-import Logo from "@/components/header/logo";
-import { LogoImg } from "@/lib/data";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -24,7 +22,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Amar Editz",
   description: "Video Editz with love",
-  icons: [{ rel: "icon", url: LogoImg }],
+  icons: [{ rel: "icon", url: "📸" }],
 };
 
 export default function RootLayout({
@@ -35,15 +33,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased [perspective::1000px] [transform-style:preserve-3d] flex flex-col `}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased [perspective::1000px] [transform-style:preserve-3d] flex flex-col bg-stone-900  `}
         style={{
-          backgroundImage: `radial-gradient(circle at 0.2px 0.2px,rgba(6,182,212,0.1), 0.5px, transparent 0)`,
+          backgroundImage: `radial-gradient(circle at 5px 5px,rgba(6,182,212,0.1), 1px, transparent 0)`,
           backgroundSize: "8px 8px",
           backgroundRepeat: "repeat",
         }}
       >
         <NavHeader />
-        <main className="min-h-screen flex-grow">
+        <main className="min-h-screen flex-grow container mx-auto ">
           {children}
           <Footer />
         </main>
