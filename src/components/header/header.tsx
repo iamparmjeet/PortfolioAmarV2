@@ -7,6 +7,7 @@ import { useState } from "react";
 import Logo from "@/components/header/logo";
 import { Button } from "@/components/ui/button";
 import { useScroll } from "@/lib/hooks";
+import LetsTalkButton from "../lets-talk-btn";
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -90,17 +91,5 @@ export default function Header() {
         )}
       </header>
     </>
-  );
-}
-
-function LetsTalkButton() {
-  return (
-    <Button asChild className="hidden md:block" variant="orange" size="lg">
-      <Link
-        href="#contact"
-      >
-        Let's Talk
-      </Link>
-    </Button>
   );
 }
