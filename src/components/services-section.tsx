@@ -1,53 +1,125 @@
+import { IconBrandInstagram, IconBulbFilled, IconCamera, IconMicrophone, IconMovie, IconVideo } from "@tabler/icons-react";
 import ServiceCard from "./service.card";
+import { GlowingEffect } from "./ui/glowing-effect";
 
 export default function ServicesSection() {
   return (
-    <section className="py-20 bg-neutral-950">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+    <section className="p-6 flex flex-col gap-6 text-white rounded-2xl bg-black">
+        <div className="text-center">
+          <h2 className="text-3xl md:text-6xl font-bold">
             My
             {" "}
             <span className="text-gold-400">Services</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
             Comprehensive video production services tailored to elevate your brand's visual presence
-          </p>
+        </p>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <ServiceCard
-            icon="video-camera"
-            title="Video Production"
-            description="Professional video shooting for commercials, interviews, and promotional content."
-          />
-          <ServiceCard
-            icon="edit"
-            title="Video Editing"
-            description="Cinematic editing, color grading, and post-production for all types of video content."
-          />
-          <ServiceCard
-            icon="podcast"
-            title="Podcast Production"
-            description="End-to-end podcast recording, editing and publishing services."
-          />
-          <ServiceCard
-            icon="instagram"
-            title="Social Media Content"
-            description="Short-form video content optimized for Instagram, TikTok, and other platforms."
-          />
-          <ServiceCard
-            icon="camera"
-            title="Product Photography"
-            description="High-quality product catalog shoots with professional lighting and styling."
-          />
-          <ServiceCard
-            icon="lightbulb"
-            title="Concept Planning"
-            description="Creative direction and storyboarding to bring your vision to life."
-          />
-        </div>
-      </div>
+      <ServicesGrid />
     </section>
   );
 }
+
+
+const GridItemsData = [
+  {
+    id: 1,
+    area:"md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]",
+    icon: <IconBrandInstagram />,
+    title: "Instagram Reels",
+    description: "Engaging short-form videos tailored for Instagram.",
+  },
+  {
+    id: 2,
+    area:"md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]",
+    icon: <IconCamera />,
+    title: "Photography",
+    description: "High-quality photography services for products and events.",
+  },
+  {
+    id: 3,
+     area:"md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]",
+    icon: <IconVideo />,
+    title: "Video Production",
+    description: "Professional video production services for various needs.",
+  },
+  {
+    id: 4,
+    area:"md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]",
+    icon: <IconMovie />,
+    title: "Video Editing",
+    description: "Expert video editing services to enhance your footage.",
+  },
+  {
+    id: 5,
+    area:"md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]",
+    icon: <IconMicrophone />,
+    title: "Podcast Production",
+    description: "Full-service podcast production from recording to editing.",
+  },
+  // {
+  //   id: 6,
+  //   icon: <IconBulbFilled />,
+  //   title: "Concept Planning",
+  //   description: "Creative concept planning for videos and podcasts.",
+  // }
+]
+
+
+
+function ServicesGrid() {
+  return (
+    <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
+      {GridItemsData.map((item) => (
+        <GridItem 
+          key={item.id}
+          area={item.area}
+          icon={item.icon}
+          title={item.title}
+          description={item.description}
+        />
+      ))
+      }
+    </ul>
+  )
+}
+
+interface GridItemProps {
+  area: string;
+  icon: React.ReactNode;
+  title: string;
+  description: React.ReactNode;
+}
+
+const GridItem = ({ area, icon, title, description }: GridItemProps) => {
+  return (
+    <li className={`min-h-[14rem] list-none ${area}`}>
+      <div className="relative h-full rounded-2xl border p-2 md:rounded-3xl md:p-3">
+        <GlowingEffect
+          blur={0}
+          borderWidth={3}
+          spread={80}
+          glow={true}
+          disabled={false}
+          proximity={64}
+          inactiveZone={0.01}
+        />
+        <div className="border-0.75 relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl p-6 md:p-6 dark:shadow-[0px_0px_27px_0px_#2D2D2D]">
+          <div className="relative flex flex-1 flex-col justify-between gap-3">
+            <div className="w-fit rounded-lg border border-gray-600 p-2">
+              {icon}
+            </div>
+            <div className="space-y-3">
+              <h3 className="-tracking-4 pt-0.5 font-sans text-xl/[1.375rem] font-semibold text-balance text-black md:text-2xl/[1.875rem] dark:text-white">
+                {title}
+              </h3>
+              <h2 className="font-sans text-sm/[1.125rem] text-black md:text-base/[1.375rem] dark:text-neutral-400 [&_b]:md:font-semibold [&_strong]:md:font-semibold">
+                {description}
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  );
+};
