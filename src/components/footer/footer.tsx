@@ -7,7 +7,7 @@ import FooterCopyright from "./footer-copyright";
 
 export default function Footer() {
   return (
-    <footer className="container bg-black p-6 md:p-12 rounded-3xl  xl:mx-auto m-4 md:m-10 shadow-2xl ">
+    <footer className="container bg-black p-6 rounded-2xl mx-auto m-4 md:m-10 shadow-2xl ">
       <Logo />
       <FooterUpper />
       <FooterCopyright />

@@ -23,9 +23,9 @@ export default function Header() {
   return (
     <>
       <header
-        className={`sticky z-50 px-4 md:px-0 py-2 md:py-4 top-0 ${scrolled
-          ? "bg-black/5 border-b border-gray-800/50 backdrop-blur-md"
-          : "bg-transparent"}`}
+        className={`container mx-auto bg-black sticky md:flex md:items-center z-50 md:mt-2 md:mb-4 px-4 md:px-6 py-2 md:py-4 rounded-2xl top-0  ${scrolled
+          ? "bg-black/30 backdrop-blur-md border-b border-gray-800/80"
+          : "bg-black"}`}
       >
         <div className="container hidden md:flex items-center justify-between mx-auto">
           <Logo />
@@ -74,7 +74,7 @@ export default function Header() {
                     key={item.name}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`w-full px-4 py-1.5 rounded-md transition-colors" 
+                    className={`w-full px-4 py-1.5 rounded-md transition-colors text-white " 
                   ${pathname === item.href
                     ? "bg-linear-to-r from-orange-600 to-amber-600"
                     : "hover:bg-linear-to-r from-orange-600 to-amber-600"
