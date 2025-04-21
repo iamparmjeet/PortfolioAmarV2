@@ -4,7 +4,7 @@ import { GlowingEffect } from "./ui/glowing-effect";
 
 export default function ServicesSection() {
   return (
-    <section className="p-6 flex flex-col gap-6 text-white rounded-2xl bg-black">
+    <section className=" p-6 flex flex-col gap-6 text-white rounded-2xl bg-black">
         <div className="text-center">
           <h2 className="text-3xl md:text-6xl font-bold">
             My
@@ -38,7 +38,7 @@ const GridItemsData = [
   },
   {
     id: 3,
-     area:"md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]",
+    area:"md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]",
     icon: <IconVideo />,
     title: "Video Production",
     description: "Professional video production services for various needs.",
@@ -69,7 +69,7 @@ const GridItemsData = [
 
 function ServicesGrid() {
   return (
-    <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
+    <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-6 xl:max-h-[34rem] xl:grid-rows-2">
       {GridItemsData.map((item) => (
         <GridItem 
           key={item.id}
@@ -94,7 +94,7 @@ interface GridItemProps {
 const GridItem = ({ area, icon, title, description }: GridItemProps) => {
   return (
     <li className={`min-h-[14rem] list-none ${area}`}>
-      <div className="relative h-full rounded-2xl border p-2 md:rounded-3xl md:p-3">
+      <div className="relative h-full rounded-2xl border p-2 md:rounded-3xl md:p-4">
         <GlowingEffect
           blur={0}
           borderWidth={3}
