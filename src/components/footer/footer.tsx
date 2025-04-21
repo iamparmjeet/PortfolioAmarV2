@@ -7,7 +7,7 @@ import FooterCopyright from "./footer-copyright";
 
 export default function Footer() {
   return (
-    <footer className="w-[calc(100%-32px)] md:w-[calc(100%-80px)] relative bg-black p-6 md:p-12 rounded-3xl  max-w-[1600px] xl:mx-auto m-4 md:m-10 ">
+    <footer className="container bg-black p-6 md:p-12 rounded-3xl  xl:mx-auto m-4 md:m-10 shadow-2xl ">
       <Logo />
       <FooterUpper />
       <FooterCopyright />
@@ -18,10 +18,10 @@ export default function Footer() {
 function FooterUpper() {
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:rounded-md my-0 md:my-8 container mx-auto px-4 py-12">
-        <Social />
-        <QuickLinks />
-        <Services />
-        <Contact />
+      <Social />
+      <QuickLinks />
+      <Services />
+      <Contact />
     </section>
   );
 }
