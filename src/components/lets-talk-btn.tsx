@@ -1,10 +1,11 @@
 import Link from "next/link";
-import { Button } from "./ui/button";
+import { Button } from "./ui/moving-border";
 
 export default function LetsTalkButton() {
   return (
-    <Button asChild className="hidden md:block" variant="orange" size="lg">
+    <Button className="hidden md:block"  >
       <Link
+        className="flex items-center justify-center h-full text-base font-medium"
         href="#contact"
       >
         Let's Talk
