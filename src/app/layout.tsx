@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased [perspective::1000px] [transform-style:preserve-3d] flex flex-col bg-stone-900  `}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased [perspective::1000px] [transform-style:preserve-3d] flex flex-col mx-auto bg-stone-900 overflow-x-hidden w-full `}
         style={{
           backgroundImage: `radial-gradient(circle at 5px 5px,rgba(6,182,212,0.1), 1px, transparent 0)`,
           backgroundSize: "8px 8px",
@@ -41,7 +41,7 @@ export default function RootLayout({
         }}
       >
         <NavHeader />
-        <main className="min-h-screen flex-grow container mx-auto ">
+        <main className="min-h-screen flex-grow container  md:mx-auto ">
           {children}
           <Footer />
         </main>

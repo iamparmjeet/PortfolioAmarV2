@@ -24,7 +24,7 @@ export default function Header() {
   return (
     <>
       <header
-        className={`container mx-auto bg-black sticky md:flex md:items-center z-50 md:mt-2 md:mb-4 px-4 md:px-6 py-2 md:py-4 rounded-2xl top-0  ${scrolled
+        className={`container mx-auto bg-black sticky md:flex md:items-center z-50 md:mt-2 px-4 md:px-6 py-2 md:py-4 rounded-2xl top-0  ${scrolled
           ? "bg-black/30 backdrop-blur-md border-b border-gray-800/80"
           : "bg-black"}`}
       >
