@@ -10,12 +10,12 @@ export const bg2_min_jpg = `${URL}/images/bg-gradient-min.jpg`;
 
 export const HeroImg = "/images/MyProfile.webp";
 
-export const aggarwalTile = `${URL}/assets/videos/aggarwal-tile/1/master.m3u8`
+export const aggarwalTile = `${URL}/assets/videos/aggarwal-tile/1/master.m3u8`;
 
 export const works = [
   {
     id: 1,
     title: "Tile",
-    video: `${URL}/assets/videos/aggarwal-tile/1/master.m3u8`
-  }
-]
+    video: `${URL}/assets/videos/aggarwal-tile/1/master.m3u8`,
+  },
+];

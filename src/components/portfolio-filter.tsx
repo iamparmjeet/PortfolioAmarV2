@@ -12,8 +12,8 @@ import { Button } from "./ui/button";
 // Portfolio categories
 const categories = [
   { id: "all", name: "All Work" },
-  { id: "astrology", name: "Astrology"},
-  { id: "ayurvedic", name: "Ayurvedic"},
+  { id: "astrology", name: "Astrology" },
+  { id: "ayurvedic", name: "Ayurvedic" },
   { id: "fashion", name: "Fashion & Lifestyle" },
   { id: "institute", name: "Institute" },
   { id: "decor", name: "Home Decor" },

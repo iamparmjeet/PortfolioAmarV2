@@ -7,6 +7,7 @@ import { useState } from "react";
 import Logo from "@/components/header/logo";
 import { Button } from "@/components/ui/button";
 import { useScroll } from "@/lib/hooks";
+
 import LetsTalkButton from "../lets-talk-btn";
 
 const navigation = [
@@ -46,7 +47,7 @@ export default function Header() {
               </Link>
             ))}
           </nav>
-          <LetsTalkButton href="#contact" text={"Lets Talk"} />
+          <LetsTalkButton href="#contact" text="Lets Talk" />
         </div>
         {/* Mobile Menu Button */}
         <div className="flex md:hidden items-center justify-between">
@@ -85,8 +86,8 @@ export default function Header() {
                   </Link>
                 ))}
               </ul>
-            <LetsTalkButton href="#contact" text={"Lets Talk"} />
-              
+              <LetsTalkButton href="#contact" text="Lets Talk" />
+
             </div>
           </div>
         )}

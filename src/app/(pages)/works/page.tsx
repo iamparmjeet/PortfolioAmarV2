@@ -4,17 +4,16 @@ import { IconPlayCard } from "@tabler/icons-react";
 import Image from "next/image";
 import { useState } from "react";
 
-import { aggarwalTile, placeholderImg, works } from "@/lib/data";
-import { cn } from "@/lib/utils";
-
 import { Button } from "@/components/ui/button";
 import NextVideo from "@/components/video/next-video";
+import { aggarwalTile, placeholderImg } from "@/lib/data";
+import { cn } from "@/lib/utils";
 
 // Portfolio categories
 const categories = [
   { id: "all", name: "All Work" },
-  { id: "astrology", name: "Astrology"},
-  { id: "ayurvedic", name: "Ayurvedic"},
+  { id: "astrology", name: "Astrology" },
+  { id: "ayurvedic", name: "Ayurvedic" },
   { id: "fashion", name: "Fashion & Lifestyle" },
   { id: "institute", name: "Institute" },
   { id: "decor", name: "Home Decor" },

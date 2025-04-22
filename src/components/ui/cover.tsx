@@ -1,8 +1,8 @@
 "use client";
-import { SparklesCore } from "@/components/ui/sparkles";
 import { AnimatePresence, motion } from "motion/react";
 import React, { useEffect, useId, useRef, useState } from "react";
 
+import { SparklesCore } from "@/components/ui/sparkles";
 import { cn } from "@/lib/utils";
 
 export function Cover({
@@ -212,7 +212,6 @@ export function Beam({
 
 export function CircleIcon({
   className,
-  delay,
 }: {
   className?: string;
   delay?: number;

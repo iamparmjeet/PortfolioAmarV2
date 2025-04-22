@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useState, useEffect, useId } from "react";
-
 import { motion } from "motion/react";
+import React, { useEffect, useId, useState } from "react";
+
 import { cn } from "@/lib/utils";
 
-export interface ContainerTextFlipProps {
+export type ContainerTextFlipProps = {
   /** Array of words to cycle through in the animation */
   words?: string[];
   /** Time in milliseconds between word transitions */
@@ -16,7 +16,7 @@ export interface ContainerTextFlipProps {
   textClassName?: string;
   /** Duration of the transition animation in milliseconds */
   animationDuration?: number;
-}
+};
 
 export function ContainerTextFlip({
   words = ["better", "modern", "beautiful", "awesome"],
@@ -33,7 +33,7 @@ export function ContainerTextFlip({
   const updateWidthForWord = () => {
     if (textRef.current) {
       // Add some padding to the text width (30px on each side)
-      // @ts-ignore
+      // @ts-expect-error for setwidth is missing
       const textWidth = textRef.current.scrollWidth + 30;
       setWidth(textWidth);
     }
@@ -46,7 +46,7 @@ export function ContainerTextFlip({
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
+      setCurrentWordIndex(prevIndex => (prevIndex + 1) % words.length);
       // Width will be updated in the effect that depends on currentWordIndex
     }, interval);
 

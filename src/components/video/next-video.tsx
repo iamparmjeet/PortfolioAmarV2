@@ -5,9 +5,9 @@ import Instaplay from "player.style/instaplay/react";
 type VideoProps = {
   href: string;
   thumbnail: string;
-}
+};
 
-export default function NextVideo({href, thumbnail}: VideoProps) {
+export default function NextVideo({ href, thumbnail }: VideoProps) {
   return (
     <>
       <Video
