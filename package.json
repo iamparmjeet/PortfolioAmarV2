@@ -62,5 +62,8 @@
   },
   "lint-staged": {
     "*": "pnpm lint"
+  },
+  "engines": {
+    "node": ">=22"
   }
 }
