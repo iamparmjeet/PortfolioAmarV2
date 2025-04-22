@@ -2,14 +2,16 @@ import Video from "next-video";
 import Image from "next/image";
 import Instaplay from "player.style/instaplay/react";
 
-const video1 = "https://media.amarjeetmishra.com/aggarwal-tile/1/master.m3u8";
-const thumbnail = "https://media.amarjeetmishra.com/aggarwal-tile/1/thumbnail_720.webp";
+type VideoProps = {
+  href: string;
+  thumbnail: string;
+}
 
-export default function NextVideo() {
+export default function NextVideo({href, thumbnail}: VideoProps) {
   return (
     <>
       <Video
-        src={video1}
+        src={href}
         theme={Instaplay}
         style={{
           width: "400px",

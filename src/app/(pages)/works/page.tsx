@@ -4,10 +4,11 @@ import { IconPlayCard } from "@tabler/icons-react";
 import Image from "next/image";
 import { useState } from "react";
 
-import { placeholderImg } from "@/lib/data";
+import { aggarwalTile, placeholderImg, works } from "@/lib/data";
 import { cn } from "@/lib/utils";
 
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
+import NextVideo from "@/components/video/next-video";
 
 // Portfolio categories
 const categories = [
@@ -30,7 +31,7 @@ const portfolioItems = [
     id: 1,
     title: "Tile Shop",
     category: "real-estate",
-    thumbnail: placeholderImg,
+    thumbnail: aggarwalTile,
     type: "video",
     client: "Elite Properties",
   },
@@ -180,14 +181,14 @@ const portfolioItems = [
   },
 ];
 
-export default function PortfolioFilter() {
+export default function Works() {
   const [activeCategory, setActiveCategory] = useState("all");
 
   const filteredItems
     = activeCategory === "all" ? portfolioItems : portfolioItems.filter(item => item.category === activeCategory);
 
   return (
-    <div className="space-y-8 w-full">
+    <div className="space-y-8 w-full bg-black p-6 rounded-2xl mt-6">
       {/* Filter Buttons */}
       <div className="flex flex-wrap justify-center gap-2 md:gap-4">
         {categories.map(category => (
@@ -210,7 +211,8 @@ export default function PortfolioFilter() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredItems.map(item => (
           <div key={item.id} className="group relative overflow-hidden rounded-lg">
-            <div className="aspect-video relative overflow-hidden">
+            <div className="h-[600px] relative overflow-hidden">
+              <NextVideo href={item.thumbnail} thumbnail="" />
               <Image
                 src={item.thumbnail || "/placeholder.svg"}
                 alt={item.title}

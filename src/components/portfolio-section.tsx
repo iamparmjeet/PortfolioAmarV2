@@ -1,22 +1,19 @@
+import LetsTalkButton from "./lets-talk-btn";
 import PortfolioFilter from "./portfolio-filter";
 
 export default function PortfolioSection() {
   return (
-    <section id="portfolio" className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            My
-            {" "}
-            <span className="text-gold-400">Portfolio</span>
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Explore my work across different industries and project types
-          </p>
-        </div>
-
-        <PortfolioFilter />
+    <section id="portfolio" className="p-6 md:py-12 bg-black my-6 rounded-2xl text-white flex flex-col items-center gap-10">
+      <div className="text-center">
+        <h2 className="bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent text-3xl md:text-5xl font-extrabold">
+          My Portfolio
+        </h2>
+        <p className="text-neutral-300 text-base md:text-xl max-w-xl mx-auto mt-6">
+          Explore my work across different industries and project types
+        </p>
       </div>
+      <PortfolioFilter />
+      <LetsTalkButton href="/works" text="Portfolio" />
     </section>
   );
 }

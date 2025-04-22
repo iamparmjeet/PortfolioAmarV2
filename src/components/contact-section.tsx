@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="p-6 py-12 bg-black text-white mt-6 rounded-2xl">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>

@@ -11,7 +11,8 @@
   - [x] Hero
   - [x] Services
   - [ ] Portfolios
-  - [ ] Reviews
+  - [x] Reviews
+    - [ ] Real Data pending
   - [ ] Contacts
 - [ ] About Page
   - [ ] Desktop Version
