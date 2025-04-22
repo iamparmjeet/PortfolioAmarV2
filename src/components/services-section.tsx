@@ -1,97 +1,94 @@
-import { IconBrandInstagram, IconBulbFilled, IconCamera, IconMicrophone, IconMovie, IconVideo } from "@tabler/icons-react";
-import ServiceCard from "./service.card";
+import { IconBrandInstagram, IconCamera, IconMicrophone, IconMovie, IconVideo } from "@tabler/icons-react";
+
 import { GlowingEffect } from "./ui/glowing-effect";
 
 export default function ServicesSection() {
   return (
-    <section className=" p-6 flex flex-col gap-6 text-white rounded-2xl bg-black">
-        <div className="text-center">
-          <h2 className="text-3xl md:text-6xl font-bold">
-            My
-            {" "}
-            <span className="text-gold-400">Services</span>
-          </h2>
-          <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
-            Comprehensive video production services tailored to elevate your brand's visual presence
+    <section className=" p-6 md:py-12 flex flex-col text-white rounded-2xl bg-black">
+      <div className="text-center">
+        <h2 className="text-3xl md:text-5xl font-bold">
+          My
+          {" "}
+          <span className="">Services</span>
+        </h2>
+        <p className="text-gray-400 my-6 md:my-8 max-w-2xl mx-auto">
+          Comprehensive video production services tailored to elevate your brand's visual presence
         </p>
-        </div>
+      </div>
       <ServicesGrid />
     </section>
   );
 }
 
-
 const GridItemsData = [
   {
     id: 1,
-    area:"md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]",
+    area: "md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]",
     icon: <IconBrandInstagram />,
     title: "Instagram Reels",
     description: "Engaging short-form videos tailored for Instagram.",
   },
   {
     id: 2,
-    area:"md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]",
+    area: "md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]",
     icon: <IconCamera />,
     title: "Photography",
     description: "High-quality photography services for products and events.",
   },
   {
     id: 3,
-    area:"md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]",
+    area: "md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]",
     icon: <IconVideo />,
     title: "Video Production",
     description: "Professional video production services for various needs.",
   },
   {
     id: 4,
-    area:"md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]",
+    area: "md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]",
     icon: <IconMovie />,
     title: "Video Editing",
     description: "Expert video editing services to enhance your footage.",
   },
   {
     id: 5,
-    area:"md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]",
+    area: "md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]",
     icon: <IconMicrophone />,
     title: "Podcast Production",
     description: "Full-service podcast production from recording to editing.",
   },
   // {
   //   id: 6,
+  //   area: "md:[grid-area:4/2/6/13] xl:[grid-area:2/8/3/13]",
   //   icon: <IconBulbFilled />,
   //   title: "Concept Planning",
   //   description: "Creative concept planning for videos and podcasts.",
-  // }
-]
-
-
+  // },
+];
 
 function ServicesGrid() {
   return (
     <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-6 xl:max-h-[34rem] xl:grid-rows-2">
-      {GridItemsData.map((item) => (
-        <GridItem 
+      {GridItemsData.map(item => (
+        <GridItem
           key={item.id}
           area={item.area}
           icon={item.icon}
           title={item.title}
           description={item.description}
         />
-      ))
-      }
+      ))}
     </ul>
-  )
+  );
 }
 
-interface GridItemProps {
+type GridItemProps = {
   area: string;
   icon: React.ReactNode;
   title: string;
   description: React.ReactNode;
-}
+};
 
-const GridItem = ({ area, icon, title, description }: GridItemProps) => {
+function GridItem({ area, icon, title, description }: GridItemProps) {
   return (
     <li className={`min-h-[14rem] list-none ${area}`}>
       <div className="relative h-full rounded-2xl border p-2 md:rounded-3xl md:p-4">
@@ -122,4 +119,4 @@ const GridItem = ({ area, icon, title, description }: GridItemProps) => {
       </div>
     </li>
   );
-};
+}
