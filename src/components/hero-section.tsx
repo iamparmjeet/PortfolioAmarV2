@@ -1,7 +1,9 @@
 import Image from "next/image";
+
 import { HeroImg } from "@/lib/data";
-import { ContainerTextFlip } from "./ui/container-text-flip";
+
 import LetsTalkButton from "./lets-talk-btn";
+import { ContainerTextFlip } from "./ui/container-text-flip";
 
 export default function HeroSection() {
   return (
@@ -25,12 +27,12 @@ export default function HeroSection() {
             words={["Video Campaigns", "Insta Campaigns", "Youtube Videos", "Podcasts"]}
           />
         </h1>
-        <h2 className="text-xl md:text-3xl font-medium">Launch your video compaign in hours, not days</h2>
-        <p className="text-base md:text-xl md:text-balance">
+        <h2 className="text-xl md:text-3xl font-medium text-neutral-300">Launch your video compaign in hours, not days</h2>
+        <p className="text-neutral-300 text-base md:text-xl md:text-balance">
           Transforming ideas into compelling visual narratives for property dealers, beauty professionals, and
           businesses across industries.
         </p>
-        <LetsTalkButton href="#contact" text={"Lets Talk"} />
+        <LetsTalkButton href="#contact" text="Lets Talk" />
       </div>
 
     </section>
