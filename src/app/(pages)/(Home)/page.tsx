@@ -11,7 +11,7 @@ export default async function Home() {
 
   return (
     <>
-      <div>
+      <div className="cotainer p-6">
         <Image
           src="https://media.amarjeetmishra.com/amarjeet-portfolio/assets/images/Jewellery/1.webp"
           alt="Jewellery"
