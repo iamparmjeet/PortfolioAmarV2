@@ -8,6 +8,11 @@
 - [ ] Home Page
   - [ ] Desktop Version
   - [ ] Mobile Version
+  - [x] Hero
+  - [x] Services
+  - [ ] Portfolios
+  - [ ] Reviews
+  - [ ] Contacts
 - [ ] About Page
   - [ ] Desktop Version
   - [ ] Mobile Version
