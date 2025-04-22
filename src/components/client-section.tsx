@@ -1,27 +1,56 @@
-import ClientLogos from "./client-logos";
-import StatsCounter from "./stats-counter";
+import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 
 export default function ClientSection() {
   return (
-    <section className="py-20">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Trusted by
-            {" "}
-            <span className="text-gold-400">Clients</span>
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">Proud to have worked with these amazing businesses</p>
-        </div>
-
-        <ClientLogos />
-
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <StatsCounter number={50} label="Completed Projects" />
-          <StatsCounter number={25} label="Happy Clients" />
-          <StatsCounter number={5} label="Years Experience" />
-        </div>
+    <section className="p-6 pt-12 md:pb-24 bg-black rounded-2xl text-white">
+      <div className="text-center">
+        <h2 className="bg-gradient-to-r from-orange-500 to-yellow-500 bg-clip-text text-transparent text-3xl md:text-4xl font-bold">
+          Trusted by Clients
+        </h2>
+        <p className="text-neutral-300 text-base md:text-xl max-w-2xl mx-auto mt-6 mb-12">Proud to have worked with these amazing businesses</p>
       </div>
+      <AnimatedTestimonialsDemo />
     </section>
   );
+}
+
+function AnimatedTestimonialsDemo() {
+  const testimonials = [
+    {
+      quote:
+        "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
+      name: "Sarah Chen",
+      designation: "Product Manager at TechFlow",
+      src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      quote:
+        "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
+      name: "Michael Rodriguez",
+      designation: "CTO at InnovateSphere",
+      src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      quote:
+        "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
+      name: "Emily Watson",
+      designation: "Operations Director at CloudScale",
+      src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      quote:
+        "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
+      name: "James Kim",
+      designation: "Engineering Lead at DataPro",
+      src: "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=3464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      quote:
+        "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
+      name: "Lisa Thompson",
+      designation: "VP of Technology at FutureNet",
+      src: "https://images.unsplash.com/photo-1624561172888-ac93c696e10c?q=80&w=2592&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+  ];
+  return <AnimatedTestimonials testimonials={testimonials} />;
 }
