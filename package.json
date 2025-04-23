@@ -1,7 +1,11 @@
 {
   "name": "portfolio-amar-v2",
+  "type": "module",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -19,11 +23,9 @@
   "dependencies": {
     "@radix-ui/react-slot": "^1.1.2",
     "@tabler/icons-react": "^3.31.0",
-    "@tanstack/react-query": "^5.74.4",
     "@tsparticles/engine": "^3.8.1",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.8.1",
-    "axios": "^1.8.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "dotenv": "^16.5.0",
@@ -46,7 +48,6 @@
     "@eslint/eslintrc": "^3",
     "@opennextjs/cloudflare": "1.0.0-beta.3",
     "@tailwindcss/postcss": "^4",
-    "@tanstack/eslint-plugin-query": "^5.73.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
@@ -67,8 +68,5 @@
   },
   "lint-staged": {
     "*": "pnpm lint"
-  },
-  "engines": {
-    "node": ">=22"
   }
 }
