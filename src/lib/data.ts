@@ -1,4 +1,4 @@
-const URL = "https://media.amarjeetmishra.com";
+export const URL = "https://media.amarjeetmishra.com";
 // const LocalURL = "http://localhost:3000";
 
 export const LogoImg = `${URL}/images/logo.png`;
@@ -10,7 +10,10 @@ export const bg2_min_jpg = `${URL}/images/bg-gradient-min.jpg`;
 
 export const HeroImg = "/images/MyProfile.webp";
 
-export const aggarwalTile = `${URL}/assets/videos/aggarwal-tile/1/master.m3u8`;
+export const aggarwalTile = `${URL}/assets/Videos/aggarwal-tile/1/master.m3u8`;
+export const aggarwalTile1 = `${URL}/assets/Videos/aggarwal-tile/2/master.m3u8`;
+
+// many more
 
 export const works = [
   {
