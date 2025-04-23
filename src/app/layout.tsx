@@ -7,6 +7,7 @@ import Footer from "@/components/footer/footer";
 import "./globals.css";
 
 import NavHeader from "@/components/header/header";
+import QueryProvider from "@/components/query-provider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -41,10 +42,12 @@ export default function RootLayout({
         }}
       >
         <NavHeader />
-        <main className="min-h-screen flex-grow container  md:mx-auto ">
-          {children}
-          <Footer />
-        </main>
+        <QueryProvider>
+          <main className="min-h-screen flex-grow container  md:mx-auto ">
+            {children}
+            <Footer />
+          </main>
+        </QueryProvider>
       </body>
     </html>
   );
