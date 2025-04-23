@@ -1,190 +1,31 @@
 "use client";
 
-import { IconPlayCard } from "@tabler/icons-react";
-import Image from "next/image";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
+import { categories, portfolioItems } from "@/components/portfolio-data";
 import { Button } from "@/components/ui/button";
 import NextVideo from "@/components/video/next-video";
-import { aggarwalTile, placeholderImg } from "@/lib/data";
 import { cn } from "@/lib/utils";
-
-// Portfolio categories
-const categories = [
-  { id: "all", name: "All Work" },
-  { id: "astrology", name: "Astrology" },
-  { id: "ayurvedic", name: "Ayurvedic" },
-  { id: "fashion", name: "Fashion & Lifestyle" },
-  { id: "institute", name: "Institute" },
-  { id: "decor", name: "Home Decor" },
-  { id: "real-estate", name: "Real Estate" },
-  { id: "beauty", name: "Beauty & Salon" },
-  { id: "health", name: "Health" },
-  { id: "product", name: "Product Catalogs" },
-  { id: "podcast", name: "Podcasts" },
-];
-
-// Portfolio items
-const portfolioItems = [
-  {
-    id: 1,
-    title: "Tile Shop",
-    category: "real-estate",
-    thumbnail: aggarwalTile,
-    type: "video",
-    client: "Elite Properties",
-  },
-  {
-    id: 2,
-    title: "Astrology",
-    category: "astrology",
-    thumbnail: placeholderImg,
-    type: "video",
-    client: "Smile Perfect Dental",
-  },
-  {
-    id: 3,
-    title: "Astrology Braclets",
-    category: "astrology",
-    thumbnail: placeholderImg,
-    type: "video",
-    client: "Glamour Studio",
-  },
-  {
-    id: 4,
-    title: "Carry Bag",
-    category: "fashion",
-    thumbnail: placeholderImg,
-    type: "image",
-    client: "Carry Your Style",
-  },
-  {
-    id: 5,
-    title: "Genius Brain",
-    category: "institute",
-    thumbnail: placeholderImg,
-    type: "image",
-    client: "Brain Power",
-  },
-  {
-    id: 6,
-    title: "Hair Salon Institute",
-    category: "institute",
-    thumbnail: placeholderImg,
-    type: "video",
-    client: "Learn with Us",
-  },
-  {
-    id: 7,
-    title: "Home Decor",
-    category: "decor",
-    thumbnail: placeholderImg,
-    type: "image",
-    client: "Elegant Accessories",
-  },
-  {
-    id: 8,
-    title: "Hospital",
-    category: "health",
-    thumbnail: placeholderImg,
-    type: "video",
-    client: "Health First",
-  },
-  {
-    id: 9,
-    title: "Health Insurance",
-    category: "health",
-    thumbnail: placeholderImg,
-    type: "video",
-    client: "Health First",
-  },
-  {
-    id: 10,
-    title: "Interior",
-    category: "decor",
-    thumbnail: placeholderImg,
-    type: "video",
-    client: "Beauty Home",
-  },
-  {
-    id: 11,
-    title: "Saloon",
-    category: "institute",
-    thumbnail: placeholderImg,
-    type: "video",
-    client: "Jeens Salon",
-  },
-  {
-    id: 12,
-    title: "Jewellery",
-    category: "product",
-    thumbnail: placeholderImg,
-    type: "video",
-    client: "Gold For Life",
-  },
-  {
-    id: 13,
-    title: "Kid Toys",
-    category: "product",
-    thumbnail: placeholderImg,
-    type: "video",
-    client: "Toy Zone",
-  },
-  {
-    id: 14,
-    title: "Mattress",
-    category: "product",
-    thumbnail: placeholderImg,
-    type: "video",
-    client: "Sleepy Cat",
-  },
-  {
-    id: 15,
-    title: "Miss USA",
-    category: "fashion",
-    thumbnail: placeholderImg,
-    type: "video",
-    client: "Beauty Queen",
-  },
-  {
-    id: 16,
-    title: "Nutrition USA",
-    category: "product",
-    thumbnail: placeholderImg,
-    type: "video",
-    client: "Nutrition USA",
-  },
-  {
-    id: 17,
-    title: "Home Maker",
-    category: "real-estate",
-    thumbnail: placeholderImg,
-    type: "video",
-    client: "Toy Estate",
-  },
-  {
-    id: 18,
-    title: "Skin Care",
-    category: "beauty",
-    thumbnail: placeholderImg,
-    type: "video",
-    client: "Glass Skin",
-  },
-  {
-    id: 19,
-    title: "Ayurvedic",
-    category: "ayurvedic",
-    thumbnail: placeholderImg,
-    type: "video",
-    client: "Glass Skin",
-  },
-];
 
 export default function Works() {
   const [activeCategory, setActiveCategory] = useState("all");
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 9;
 
-  const filteredItems
-    = activeCategory === "all" ? portfolioItems : portfolioItems.filter(item => item.category === activeCategory);
+  const filteredItems = useMemo(() => {
+    const filtered = activeCategory === "all"
+      ? portfolioItems
+      : portfolioItems.filter(item => item.category === activeCategory);
+
+    // Reset to first page when filter changes
+    setCurrentPage(1);
+    return filtered;
+  }, [activeCategory]);
+
+  const currentItems = filteredItems.slice(
+    (currentPage - 1) * itemsPerPage,
+    currentPage * itemsPerPage,
+  );
 
   return (
     <div className="space-y-8 w-full bg-black p-6 rounded-2xl mt-6">
@@ -208,17 +49,15 @@ export default function Works() {
 
       {/* Portfolio Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredItems.map(item => (
+        {currentItems.map(item => (
           <div key={item.id} className="group relative overflow-hidden rounded-lg">
-            <div className="h-[600px] relative overflow-hidden">
-              <NextVideo href={item.thumbnail} thumbnail="" />
-              <Image
-                src={item.thumbnail || "/placeholder.svg"}
-                alt={item.title}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-110"
+            <div className="h-[854px] object-fill relative overflow-hidden">
+              <NextVideo
+                href={item.thumbnail}
+                thumbnail={item.thumbnail.replace(".m3u8", ".webp")}
               />
-              <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+
+              {/* <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 {item.type === "video"
                   ? (
                       <Button className="w-16 h-16 rounded-full bg-gold-500 flex items-center justify-center">
@@ -226,9 +65,11 @@ export default function Works() {
                       </Button>
                     )
                   : (
-                      <Button className="px-4 py-2 bg-gold-500 rounded-md text-black font-medium">View Gallery</Button>
+                      <Button className="px-4 py-2 bg-gold-500 rounded-md text-black font-medium">
+                        View Gallery
+                      </Button>
                     )}
-              </div>
+              </div> */}
             </div>
             <div className="p-4 bg-neutral-900">
               <h3 className="text-lg font-medium text-white">{item.title}</h3>
