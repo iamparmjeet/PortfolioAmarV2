@@ -1,6 +1,6 @@
 import Video from "next-video/player";
 import Image from "next/image";
-import Instaplay from "player.style/instaplay/react";
+// import Instaplay from "player.style/instaplay/react";
 
 type VideoProps = {
   href: string;
