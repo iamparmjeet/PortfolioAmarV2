@@ -5,7 +5,7 @@ import { HeroImg } from "@/lib/data";
 import LetsTalkButton from "./lets-talk-btn";
 import { ContainerTextFlip } from "./ui/container-text-flip";
 
-export default function HeroSection() {
+export default async function HeroSection() {
   return (
     <section className="flex flex-col gap-6 md:flex-row bg-black rounded-2xl overflow-hidden my-4 md:my-6 text-white p-6">
       <div className="md:w-1/2">
