@@ -9,9 +9,9 @@ type ButtonProps = {
 
 export default function LetsTalkButton({ text, href }: ButtonProps) {
   return (
-    <Button className="md:block">
+    <Button borderRadius="1.75rem" className="relative z-10 bg-white text-black hover:bg-gray-100">
       <Link
-        className="flex items-center justify-center h-full text-base font-medium"
+        className="flex items-center justify-center h-full text-base font-medium "
         href={href || "/contact"}
       >
         {text}

@@ -18,10 +18,10 @@ export default function NextVideo({ href, thumbnail }: VideoProps) {
       // theme={Instaplay}
     >
       <Image
-        src={thumbnail || ""}
         slot="poster"
+        src={thumbnail || ""}
         placeholder="blur"
-        blurDataURL="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+P+/HgAFhAJ/wlseKgAAAABJRU5ErkJggg=="
+        blurDataURL={thumbnail}
         width={720}
         height={1280}
         alt="Video thumbnail"

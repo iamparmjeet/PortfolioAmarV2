@@ -86,7 +86,7 @@ export default function Header() {
                   </Link>
                 ))}
               </ul>
-              <LetsTalkButton href="#contact" text="Lets Talk" />
+              <LetsTalkButton href="/contact" text="Lets Talk" />
 
             </div>
           </div>

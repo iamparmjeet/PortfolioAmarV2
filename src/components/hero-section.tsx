@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 
 import { HeroImg } from "@/lib/data";
@@ -5,7 +6,7 @@ import { HeroImg } from "@/lib/data";
 import LetsTalkButton from "./lets-talk-btn";
 import { ContainerTextFlip } from "./ui/container-text-flip";
 
-export default async function HeroSection() {
+export default function HeroSection() {
   return (
     <section className="flex flex-col gap-6 md:flex-row bg-black rounded-2xl overflow-hidden my-4 md:my-6 text-white p-6">
       <div className="md:w-1/2">
@@ -32,7 +33,7 @@ export default async function HeroSection() {
           Transforming ideas into compelling visual narratives for property dealers, beauty professionals, and
           businesses across industries.
         </p>
-        <LetsTalkButton href="#contact" text="Lets Talk" />
+        <LetsTalkButton href="/contact" text="Lets Talk" />
       </div>
 
     </section>
