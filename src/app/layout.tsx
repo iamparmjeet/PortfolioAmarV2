@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 
-import localFont from "next/font/local";
-
-import Footer from "@/components/footer/footer";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "./globals.css";
 
+import localFont from "next/font/local";
+
+import Footer from "@/components/footer/footer";
 import NavHeader from "@/components/header/header";
 
 const geistSans = localFont({
@@ -45,6 +47,8 @@ export default function RootLayout({
           {children}
           <Footer />
         </main>
+        <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
