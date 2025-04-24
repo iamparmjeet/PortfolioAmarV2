@@ -1,9 +1,5 @@
-import { IconPlayCard, IconPlayerPlay } from "@tabler/icons-react";
-
 import NextVideo from "@/components/video/next-video";
 import { URL } from "@/lib/data";
-
-import { Button } from "./ui/button";
 
 export default function ContactSection() {
   const item = `${URL}/assets/Videos/amar-in-action/1/master.m3u8`;
