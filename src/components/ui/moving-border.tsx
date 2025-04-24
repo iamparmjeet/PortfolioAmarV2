@@ -6,7 +6,7 @@ import {
   useMotionValue,
   useTransform,
 } from "motion/react";
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, { useLayoutEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -32,7 +32,7 @@ export function Button({
   return (
     <Component
       className={cn(
-        "relative h-16 w-40 overflow-hidden bg-transparent p-[1px] text-xl",
+        "relative h-12 w-30 overflow-hidden bg-transparent p-[2px] text-xl",
         containerClassName,
       )}
       style={{
@@ -56,7 +56,7 @@ export function Button({
 
       <div
         className={cn(
-          "relative flex h-full w-full items-center justify-center border border-slate-800 bg-slate-900/[0.8] text-sm text-white antialiased backdrop-blur-xl",
+          "relative flex h-full w-full items-center justify-center border border-orange-600 bg-linear-to-r from-orange-600 to-amber-600 hover:bg-linear-to-l text-sm text-white antialiased backdrop-blur-xl",
           className,
         )}
         style={{
