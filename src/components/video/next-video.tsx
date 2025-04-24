@@ -22,8 +22,8 @@ export default function NextVideo({ href, thumbnail }: VideoProps) {
         src={thumbnail || ""}
         placeholder="blur"
         blurDataURL={thumbnail}
-        width={720}
-        height={1280}
+        width={480}
+        height={855}
         alt="Video thumbnail"
       />
     </Video>
