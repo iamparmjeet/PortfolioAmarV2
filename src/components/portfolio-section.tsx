@@ -1,5 +1,5 @@
 import LetsTalkButton from "./lets-talk-btn";
-import PortfolioFilter from "./portfolio-filter";
+import PortfolioSectionWithFilter from "./portfolios-all";
 
 export default function PortfolioSection() {
   return (
@@ -12,7 +12,7 @@ export default function PortfolioSection() {
           Explore my work across different industries and project types
         </p>
       </div>
-      <PortfolioFilter />
+      <PortfolioSectionWithFilter items={6} />
       <LetsTalkButton href="/works" text="Portfolio" />
     </section>
   );
