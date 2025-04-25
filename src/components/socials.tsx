@@ -1,11 +1,20 @@
 import { IconBrandInstagram, IconBrandTwitter, IconBrandYoutube } from "@tabler/icons-react";
 import Link from "next/link";
 
-const Socials = [
+import { socials } from "@/lib/data";
+
+type SocialsType = {
+  id: number;
+  label: string;
+  href: string;
+  icon: React.ReactNode;
+};
+
+const Socials: SocialsType[] = [
   {
     id: 1,
     label: "Follow on Instagram",
-    href: "https://www.instagram.com/amarjeetmishra001/",
+    href: socials.insta,
     icon: (
       <IconBrandInstagram
         className="hover:fill-neutral-400 hover:stroke-neutral-300 w-7 h-7 "
@@ -14,8 +23,8 @@ const Socials = [
   },
   {
     id: 2,
-    label: "Follow on Instagram",
-    href: "#",
+    label: "Follow on Twitter",
+    href: socials.twitter,
     icon: (
       <IconBrandTwitter
         className="hover:fill-neutral-400 hover:stroke-neutral-300 w-7 h-7 "
@@ -25,7 +34,7 @@ const Socials = [
   {
     id: 3,
     label: "Subscribe on Youtube",
-    href: "#",
+    href: socials.youtube,
     icon: (
       <IconBrandYoutube
         className="hover:fill-neutral-400 hover:stroke-neutral-300 w-7 h-7 "
