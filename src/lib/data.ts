@@ -10,15 +10,10 @@ export const bg2_min_jpg = `${URL}/images/bg-gradient-min.jpg`;
 
 export const HeroImg = "/images/MyProfile.webp";
 
-export const aggarwalTile = `${URL}/assets/Videos/aggarwal-tile/1/master.m3u8`;
-export const aggarwalTile1 = `${URL}/assets/Videos/aggarwal-tile/2/master.m3u8`;
-
 // many more
 
-export const works = [
-  {
-    id: 1,
-    title: "Tile",
-    video: `${URL}/assets/videos/aggarwal-tile/1/master.m3u8`,
-  },
-];
+export const socials = {
+  insta: "https://www.instagram.com/amarjeetmishra001/",
+  twitter: "#",
+  youtube: "https://www.youtube.com/@AmarEditzOfficial",
+};
