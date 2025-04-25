@@ -1,16 +1,13 @@
 import { IconBrandInstagram, IconCamera, IconMicrophone, IconMovie, IconVideo } from "@tabler/icons-react";
 
+import { OrangeHeading1 } from "./heading";
 import { GlowingEffect } from "./ui/glowing-effect";
 
 export default function ServicesSection() {
   return (
     <section className="p-6 md:py-12 flex flex-col text-white rounded-2xl bg-black">
       <div className="text-center">
-        <h2 className="text-3xl md:text-5xl font-bold">
-          My
-          {" "}
-          <span className="">Services</span>
-        </h2>
+        <OrangeHeading1 text="My Services" className="text-3xl md:text-5xl font-extrabold" />
         <p className="text-neutral-300 text-base md:text-xl my-6 md:my-8 max-w-xl  mx-auto">
           Comprehensive video production services tailored to elevate your brand's visual presence
         </p>
