@@ -21,7 +21,7 @@ const Highlights = [
 export default function AboutPage() {
   return (
     <div className="p-6 min-h-screen text-white rounded-2xl mt-6 bg-black shadow-2xl">
-      <OrangeHeading1 text="About me" />
+      <OrangeHeading1 text="About me -- " />
       {content.map(text => (
         <p key={text} className="mt-2">{text}</p>
       ))}

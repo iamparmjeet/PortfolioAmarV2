@@ -10,7 +10,7 @@
   - [ ] Mobile Version
   - [x] Hero
   - [x] Services
-  - [ ] Portfolios
+  - [x] Portfolios
   - [x] Reviews
     - [ ] Real Data pending
   - [ ] Contacts
@@ -18,11 +18,11 @@
   - [ ] Desktop Version
   - [ ] Mobile Version
 - [ ] Portfolio Page
-  - [ ] Desktop Version
-  - [ ] Mobile Version
+  - [x] Desktop Version
+  - [x] Mobile Version
   - [ ] Card Design
-  - [ ] Fetching Data from Cloudinary or Imagekit or S3
-  - [ ] CDN added
+  - [x] Fetching Data from Cloudinary
+  - [x] CDN added
 - Contact Us page
   - [ ] Desktop
   - [ ] Mobile
