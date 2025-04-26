@@ -7,6 +7,7 @@ import "./globals.css";
 
 import localFont from "next/font/local";
 
+import { DotBackground } from "@/components/backgrounds";
 import Footer from "@/components/footer/footer";
 import NavHeader from "@/components/header/header";
 
@@ -46,18 +47,17 @@ export default function RootLayout({
         <meta property="instagram:url" content="https://www.instagram.com/amarjeetmishra001/" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased [perspective::1000px] [transform-style:preserve-3d] flex flex-col mx-auto bg-stone-900 overflow-x-hidden w-full `}
-        style={{
-          backgroundImage: `radial-gradient(circle at 5px 5px,rgba(6,182,212,0.1), 1px, transparent 0)`,
-          backgroundSize: "8px 8px",
-          backgroundRepeat: "repeat",
-        }}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased [perspective::1000px] [transform-style:preserve-3d] flex flex-col mx-auto bg-stone-900 overflow-x-hidden w-full relative`}
       >
+        {/* <GridBackground /> */}
+        <DotBackground />
         <NavHeader />
-        <main className="min-h-screen flex-grow container  md:mx-auto ">
+        <main className="min-h-screen flex-grow container  md:mx-auto z-30 relative ">
+
           {children}
           <Footer />
         </main>
+        {/* </GridBackground> */}
         <SpeedInsights />
         <Analytics />
       </body>
