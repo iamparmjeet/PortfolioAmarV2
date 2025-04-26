@@ -3,7 +3,7 @@ import HeroSection from "@/components/hero-section";
 import PortfolioSection from "@/components/portfolio-section";
 import ServicesSection from "@/components/services-section";
 
-export default async function Home() {
+export default function Home() {
   return (
     <>
       <HeroSection />
