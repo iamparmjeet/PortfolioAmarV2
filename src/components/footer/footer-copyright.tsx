@@ -5,7 +5,7 @@ const year = d.getFullYear();
 
 export default function FooterCopyright() {
   return (
-    <section className="text-neutral-400 pt-6 md:pt-12 mx-auto text-start border-t border-white/10 ">
+    <section className="w-full text-neutral-400 pt-6 md:pt-12 mx-auto text-start border-t border-white/10 ">
       <p>
         ©
         {" "}
