@@ -28,7 +28,7 @@ export default function PortfolioSectionWithFilter({ items }: { items: number })
   );
 
   return (
-    <div className="space-y-8 w-full bg-black rounded-2xl">
+    <div className="space-y-8 w-full">
       {/* Filter Buttons */}
       <div className="flex flex-wrap justify-center gap-2 md:gap-4">
         {categories.map(category => (

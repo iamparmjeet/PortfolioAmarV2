@@ -1,16 +1,17 @@
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 
+import Container from "./container";
 import { OrangeHeading1 } from "./heading";
 
 export default function ClientSection() {
   return (
-    <section className="p-6 pt-12 md:pb-24 bg-black rounded-2xl text-white">
+    <Container className="flex-col">
       <div className="text-center">
         <OrangeHeading1 text="Trusted by Clients" className="text-3xl md:text-5xl font-extrabold" />
-        <p className="text-neutral-300 text-base md:text-xl max-w-2xl mx-auto mt-6 mb-12">Proud to have worked with these amazing businesses</p>
+        <p className="text-neutral-300 text-base md:text-xl max-w-2xl mx-auto mt-6">Proud to have worked with these amazing businesses</p>
       </div>
       <AnimatedTestimonialsDemo />
-    </section>
+    </Container>
   );
 }
 

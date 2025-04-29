@@ -1,11 +1,12 @@
 import { IconBrandInstagram, IconCamera, IconMicrophone, IconMovie, IconVideo } from "@tabler/icons-react";
 
+import Container from "./container";
 import { OrangeHeading1 } from "./heading";
 import { GlowingEffect } from "./ui/glowing-effect";
 
 export default function ServicesSection() {
   return (
-    <section className="p-6 md:py-12 flex flex-col text-white rounded-2xl bg-black">
+    <Container className="flex-col">
       <div className="text-center">
         <OrangeHeading1 text="My Services" className="text-3xl md:text-5xl font-extrabold" />
         <p className="text-neutral-300 text-base md:text-xl my-6 md:my-8 max-w-xl  mx-auto">
@@ -13,7 +14,7 @@ export default function ServicesSection() {
         </p>
       </div>
       <ServicesGrid />
-    </section>
+    </Container>
   );
 }
 
