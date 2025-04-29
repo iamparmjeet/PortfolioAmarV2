@@ -12,7 +12,7 @@ type ButtonProps = {
 
 export default function LetsTalkButton({ text, href, className }: ButtonProps) {
   return (
-    <Button borderRadius="1.75rem" className={cn("relative z-10 ", className)}>
+    <Button borderRadius="1.75rem" className={cn("relative z-10 w-fit min-w-30 mx-auto", className)}>
       <Link
         className="flex items-center justify-center h-full text-base font-medium "
         href={href || "/contact"}
