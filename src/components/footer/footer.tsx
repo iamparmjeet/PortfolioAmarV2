@@ -1,16 +1,19 @@
 import { IconBrandWhatsapp, IconMail, IconMap2 } from "@tabler/icons-react";
 import Link from "next/link";
 
+import Container from "../container";
 import Logo from "../header/logo";
 import SocialsBox from "../socials";
 import FooterCopyright from "./footer-copyright";
 
 export default function Footer() {
   return (
-    <footer className="bg-black p-6 rounded-2xl my-4 md:my-10 shadow-2xl ">
-      <Logo />
-      <FooterUpper />
-      <FooterCopyright />
+    <footer>
+      <Container className="flex-col w-full">
+        <Logo />
+        <FooterUpper />
+        <FooterCopyright />
+      </Container>
     </footer>
   );
 }
