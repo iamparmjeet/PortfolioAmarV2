@@ -19,7 +19,7 @@ export function GridBackground() {
 
 export function DotBackground() {
   return (
-    <div className="absolute inset-0 min-h-screen w-full items-center justify-center bg-gradient-to-tr from-orange-600 via-violet-900 to-red-800">
+    <div className="absolute inset-0 min-h-screen w-full items-center justify-center bg-gradient-to-tr from-orange-500 via-purple-500 to-red-600">
       <div
         className={cn(
           "absolute inset-0",
@@ -28,7 +28,7 @@ export function DotBackground() {
         )}
       />
       {/* Radial gradient for the container to give a faded look */}
-      <div className="pointer-events-none absolute inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] bg-black/5 "></div>
+      <div className="pointer-events-none absolute inset-0 flex items-center justify-center [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)] bg-black/20 "></div>
     </div>
   );
 }
