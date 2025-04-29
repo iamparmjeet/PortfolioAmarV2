@@ -19,6 +19,7 @@ export type ContainerTextFlipProps = {
 };
 
 export function ContainerTextFlip({
+  // eslint-disable-next-line react/no-unstable-default-props
   words = ["better", "modern", "beautiful", "awesome"],
   interval = 3000,
   className,
@@ -32,7 +33,6 @@ export function ContainerTextFlip({
 
   const updateWidthForWord = () => {
     if (textRef.current) {
-      // Add some padding to the text width (30px on each side)
       // @ts-expect-error for setwidth is missing
       const textWidth = textRef.current.scrollWidth + 30;
       setWidth(textWidth);
@@ -40,14 +40,16 @@ export function ContainerTextFlip({
   };
 
   useEffect(() => {
-    // Update width whenever the word changes
-    updateWidthForWord();
+    const handle = requestAnimationFrame(() => {
+      updateWidthForWord();
+    });
+
+    return () => cancelAnimationFrame(handle);
   }, [currentWordIndex]);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentWordIndex(prevIndex => (prevIndex + 1) % words.length);
-      // Width will be updated in the effect that depends on currentWordIndex
     }, interval);
 
     return () => clearInterval(intervalId);
@@ -79,7 +81,8 @@ export function ContainerTextFlip({
         <motion.div className="inline-block">
           {words[currentWordIndex].split("").map((letter, index) => (
             <motion.span
-              key={letter + 1}
+              // eslint-disable-next-line react/no-array-index-key
+              key={letter + index}
               initial={{
                 opacity: 0,
                 filter: "blur(10px)",
