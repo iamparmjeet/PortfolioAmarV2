@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 
 import { Analytics } from "@vercel/analytics/next";
+import localFont from "next/font/local";
 
 import "./globals.css";
-
-import localFont from "next/font/local";
 
 import { DotBackground } from "@/components/backgrounds";
 import Footer from "@/components/footer/footer";
 import NavHeader from "@/components/header/header";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -58,6 +58,7 @@ export default function RootLayout({
         </main>
         {/* </GridBackground> */}
         <Analytics />
+        <Toaster />
       </body>
     </html>
   );
