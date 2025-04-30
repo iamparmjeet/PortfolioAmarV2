@@ -1,6 +1,7 @@
 "use client";
 import { motion } from "motion/react";
 
+import Container from "@/components/container";
 import { OrangeHeading1 } from "@/components/heading";
 
 const content = [
@@ -20,7 +21,7 @@ const Highlights = [
 
 export default function AboutPage() {
   return (
-    <div className="p-6 min-h-screen text-white rounded-2xl mt-6 bg-black shadow-2xl">
+    <Container className="flex-col">
       <OrangeHeading1 text="About me -- " />
       {content.map(text => (
         <p key={text} className="mt-2">{text}</p>
@@ -33,7 +34,7 @@ export default function AboutPage() {
       <div>
         <SkeletonTwo />
       </div>
-    </div>
+    </Container>
   );
 }
 
@@ -71,7 +72,7 @@ function SkeletonTwo() {
             }}
             whileHover="whileHover"
             whileTap="whileTap"
-            className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 shrink-0 overflow-hidden"
+            className="rounded-xl -mr-4 mt-4 p-1 bg-neutral-800 border-neutral-700 border  shrink-0 overflow-hidden"
           >
             <img
               src={image}
@@ -86,14 +87,14 @@ function SkeletonTwo() {
       <div className="flex flex-row">
         {images.map((image, idx) => (
           <motion.div
-            key={`images-second${idx}`}
+            key={`images-second${image + idx}`}
             style={{
               rotate: Math.random() * 20 - 10,
             }}
             variants={imageVariants}
             whileHover="whileHover"
             whileTap="whileTap"
-            className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 shrink-0 overflow-hidden"
+            className="rounded-xl -mr-4 mt-4 p-1 bg-neutral-800 dark:border-neutral-700 border border-neutral-100 shrink-0 overflow-hidden"
           >
             <img
               src={image}
@@ -105,9 +106,6 @@ function SkeletonTwo() {
           </motion.div>
         ))}
       </div>
-
-      <div className="absolute left-0 z-[100] inset-y-0 w-20 bg-gradient-to-r from-white dark:from-black to-transparent  h-full pointer-events-none" />
-      <div className="absolute right-0 z-[100] inset-y-0 w-20 bg-gradient-to-l from-white dark:from-black  to-transparent h-full pointer-events-none" />
     </div>
   );
 }
