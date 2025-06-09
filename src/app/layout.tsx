@@ -24,7 +24,6 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Amar Editz",
   description: "Video Editz with love",
-  icons: [{ rel: "icon", url: "/images/favicon.ico" }],
 };
 
 export default function RootLayout({
