@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 
 import { HeroImg } from "@/lib/data";
@@ -10,14 +9,15 @@ import { ContainerTextFlip } from "./ui/container-text-flip";
 export default function HeroSection() {
   return (
     <Container>
-
       <div className="md:w-1/2">
         <Image
           src={HeroImg}
           alt="Hero Image"
           width={700}
           height={700}
-          className="rounded "
+          className="rounded"
+          placeholder="blur"
+          blurDataURL="https://media.amarjeetmishra.com/assets/images/body/1_blur.webp"
         />
       </div>
       <div className="flex flex-col justify-center items-start  md:w-1/2 gap-6 mx-auto ">
