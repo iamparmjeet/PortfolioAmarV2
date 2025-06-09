@@ -1,3 +1,5 @@
+import { HomeItems } from "@/lib/portfolio-data";
+
 import Container from "./container";
 import { OrangeHeading1 } from "./heading";
 import LetsTalkButton from "./lets-talk-btn";
@@ -12,7 +14,7 @@ export default function PortfolioSection() {
           Explore my work across different industries and project types
         </p>
       </div>
-      <PortfolioSectionWithFilter items={6} />
+      <PortfolioSectionWithFilter Items={6} PortfoliosItems={HomeItems} />
       <LetsTalkButton href="/works" text="Portfolio" />
     </Container>
   );
