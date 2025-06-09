@@ -2,20 +2,27 @@
 
 import { useMemo, useState } from "react";
 
-import { categories, portfolioItems } from "@/components/portfolio-data";
+import type { PortfolioItem } from "@/lib/portfolio-data";
+
 import { Button } from "@/components/ui/button";
 import NextVideo from "@/components/video/next-video";
+import { categories as Categories } from "@/lib/portfolio-data";
 import { cn } from "@/lib/utils";
 
-export default function PortfolioSectionWithFilter({ items }: { items: number }) {
+type PortfolioSectionWithFilterProps = {
+  Items?: number;
+  PortfoliosItems: PortfolioItem[];
+};
+
+export default function PortfolioSectionWithFilter({ Items, PortfoliosItems }: PortfolioSectionWithFilterProps) {
   const [activeCategory, setActiveCategory] = useState("all");
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = items || 15;
+  const itemsPerPage = Items || 15;
 
   const filteredItems = useMemo(() => {
     const filtered = activeCategory === "all"
-      ? portfolioItems
-      : portfolioItems.filter(item => item.category === activeCategory);
+      ? PortfoliosItems
+      : PortfoliosItems.filter(item => item.category === activeCategory);
 
     // Reset to first page when filter changes
     setCurrentPage(1);
@@ -31,7 +38,7 @@ export default function PortfolioSectionWithFilter({ items }: { items: number })
     <div className="space-y-8 w-full">
       {/* Filter Buttons */}
       <div className="flex flex-wrap justify-center gap-2 md:gap-4">
-        {categories.map(category => (
+        {Categories.map(category => (
           <Button
             key={category.id}
             onClick={() => setActiveCategory(category.id)}
