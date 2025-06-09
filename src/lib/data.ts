@@ -16,4 +16,7 @@ export const socials = {
   insta: "https://www.instagram.com/amarjeetmishra001/",
   twitter: "#",
   youtube: "https://www.youtube.com/@AmarEditzOfficial",
+  fiverr: "#",
+  linkedin: "#",
+  freelancer: "#",
 };
