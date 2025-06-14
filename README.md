@@ -11,6 +11,10 @@
   - [x] Hero
   - [x] Services
   - [x] Portfolios
+    - [ ] Seperate Portfolios section for home
+    - [ ] Mobile Video Fix
+    - [ ] Blur image and backup image to the video
+    - [ ] New Videos to the home as well as the work page
   - [x] Reviews
     - [ ] Real Data pending
   - [ ] Contacts

@@ -63,7 +63,7 @@ const GridItemsData = [
   // },
 ];
 
-function ServicesGrid() {
+export function ServicesGrid() {
   return (
     <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-6 xl:max-h-[34rem] xl:grid-rows-2">
       {GridItemsData.map(item => (

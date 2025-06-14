@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { HeroImg } from "@/lib/data";
+import { HeroImg, HeroImgBlur } from "@/lib/data";
 
 import Container from "./container";
 import LetsTalkButton from "./lets-talk-btn";
@@ -8,19 +8,21 @@ import { ContainerTextFlip } from "./ui/container-text-flip";
 
 export default function HeroSection() {
   return (
-    <Container>
-      <div className="md:w-1/2">
+    <Container className="flex-col md:flex-row items-center">
+      <div className="md:w-1/2 h-fit">
+
         <Image
           src={HeroImg}
           alt="Hero Image"
-          width={700}
-          height={700}
-          className="rounded"
+          width={1000}
+          height={1000}
+          priority
+          className="rounded -rotate-y-180 object-cover"
           placeholder="blur"
-          blurDataURL="https://media.amarjeetmishra.com/assets/images/body/1_blur.webp"
+          blurDataURL={HeroImgBlur}
         />
       </div>
-      <div className="flex flex-col justify-center items-start  md:w-1/2 gap-6 mx-auto ">
+      <div className="flex flex-col items-start md:w-1/2 gap-6 mx-auto ">
         <h1 className="text-3xl md:text-6xl font-extrabold leading-tight tracking-tight ">
           <span>
             Unlock The Power of
